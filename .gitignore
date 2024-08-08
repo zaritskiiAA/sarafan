@@ -1,0 +1,5 @@
+# cache dirs
+__pycache__/
+
+# sql modules
+db.sqlite3
