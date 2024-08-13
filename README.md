@@ -204,6 +204,7 @@ _Примеры:_
 > poetry run black
 
 </details>
+</details>
 
 ## 2.2. Настройка переменных окружения <a id="env"></a>
 
