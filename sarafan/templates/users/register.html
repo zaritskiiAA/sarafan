@@ -1,0 +1,12 @@
+<h2>Регистрация</h2>
+<form method="post">
+  {% csrf_token %}
+  {% for field in form %}
+      {% if field.name != "usable_password" %}
+          <div>
+              {{ field.label_tag }} {{ field }} {{ field.help_text }}
+          </div>
+      {% endif %}
+  {% endfor %}
+  <button type="submit">Зарегистрироваться</button>
+</form>

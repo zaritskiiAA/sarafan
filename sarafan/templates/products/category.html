@@ -1,0 +1,22 @@
+{% extends 'base/base.html' %}
+{% block title %}
+  Категории.
+{% endblock %}
+{% block content %}
+  <ul>
+    {% for category in object_list %}
+      <li>
+        Категория: {{ category.name }}
+        {% if category.sub_members.exists %}
+          <ul>
+            {% for subcategory in category.sub_members.all %}
+              <li>{{ subcategory.name }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </li>
+    {% endfor %}
+    
+  </ul>
+
+{% endblock %}

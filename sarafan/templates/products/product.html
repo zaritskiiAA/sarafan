@@ -1,0 +1,22 @@
+{% extends 'base/base.html' %}
+{% block title %}
+  Продукты.
+{% endblock %}
+{% block content %}
+  <ul>
+    {% for product in object_list %}
+      <li>Продукт: {{ product.name }}</li>
+      <ul>
+        <li>Категория: {{ product.sub_category.category }}</li>
+        <li>Подкатегория: {{ product.sub_category }}</li>
+        <li>Слаг: {{ product.slug }}</li>
+        <li>Цена: {{ product.price }}</li>
+        <!--Не ясно, что именно выводить в списке изображений. -->
+        <li>Изображения: {{ product.big_image.name }}, {{ product.mid_image.name }}, {{ product.small_image.name }}</li>
+      </ul>
+      
+    {% endfor %}
+    
+  </ul>
+
+{% endblock %}

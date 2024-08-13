@@ -3,3 +3,9 @@ __pycache__/
 
 # sql modules
 db.sqlite3
+
+# media dirs
+media/
+
+# env modelus
+.env

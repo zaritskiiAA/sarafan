@@ -1,0 +1,20 @@
+{% extends 'base/base.html' %}
+{% block title %}
+  Create/update/delete продукты в корзине.
+{% endblock %}
+{% block content %}
+<h5>Добавить продукты, изменить количество или удалить из корзины.</h5>
+<form id="create"  method="post">
+  {% csrf_token %}
+  {{ formset.management_form }}
+  <ul>
+  {% for form in formset %}
+    <li>
+      {{ form.as_p }} 
+    </li>
+  {% endfor %}
+  </ul>
+  <input type="submit" value="Выполнить.">
+</form>
+{% endblock %}
+{%block footer%} {%endblock%}

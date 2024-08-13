@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>
+      {% block title %}
+      Тут будет заголовок
+      {% endblock %}
+    </title>
+  </head>
+  <body>
+    <main>
+      <div>
+        {% block content %}
+          Основной текст
+        {% endblock %}
+      </div>
+      <div>
+        {% block footer %}{% include 'base/footer.html' %}{% endblock %}
+      </div>
+    </main>
+</html>

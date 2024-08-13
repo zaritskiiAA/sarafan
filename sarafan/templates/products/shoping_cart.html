@@ -1,0 +1,22 @@
+{% extends 'base/base.html' %}
+{% block title %}
+  Корзина.
+{% endblock %}
+{% block content %}
+  <ul>
+    {% for item in cart_items %}
+      <li>Продукт: {{ item.product.name }}</li>
+      <ul>
+        <li>количество: {{ item.quantity }} </li>
+        <li>Цена за единицу: {{ item.product.price }} </li>
+      </ul>     
+    {% endfor %}
+  </ul>
+  {% if total_values.total_price and total_values.total_quantity %}
+    <h5> Сумма товаров: {{ total_values.total_price }} Общее количество: {{ total_values.total_quantity }} </h5>
+    <a href="{% url 'user-cart-delete' user_id=url_kwarg %}" class="btn btn-danger">Очистить корзину.</a>
+  {% else %}
+    <h5>Пусто.</h5>
+  {% endif %}
+{% endblock %}
+{%block footer%} {%endblock%}
